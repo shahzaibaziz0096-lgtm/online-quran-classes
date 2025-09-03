@@ -364,44 +364,44 @@
     </div>
     <div class="grid cols-3">
       <div class="card" style="padding:18px;grid-column:span 2">
-        <form id="leadForm" novalidate>
-          <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:12px">
-            <div>
-              <label for="name">Full Name</label>
-              <input id="name" name="name" placeholder="Your full name" required>
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="name@email.com" required>
-            </div>
-          </div>
-          <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:12px">
-            <div>
-              <label for="phone">WhatsApp / Phone</label>
-              <input id="phone" name="phone" placeholder="e.g. +92 3049658246" required>
-            </div>
-            <div>
-              <label for="course">Course</label>
-              <select id="course" name="course" required>
-                <option value="">Select a course</option>
-                <option>Noorani Qaida</option>
-                <option>Tajweed</option>
-                <option>Hifz</option>
-                <option>islamic teaching</option>
-                <option>Arabic Basics</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label for="message">Your Goals</label>
-            <textarea id="message" name="message" placeholder="Tell us about your goals"></textarea>
-          </div>
-          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-            <button type="submit" class="btn">Request Trial</button>
-            <a href="https://wa.me/923049658246" target="_blank" class="btn">Chat on WhatsApp</a>
-            <small id="formMsg" style="color:var(--muted)"></small>
-          </div>
-        </form>
+        <form action="https://formspree.io/f/yourFormID" method="POST">
+  <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:12px">
+    <div>
+      <label for="name">Full Name</label>
+      <input id="name" name="name" placeholder="Your full name" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="name@email.com" required>
+    </div>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:12px">
+    <div>
+      <label for="phone">WhatsApp / Phone</label>
+      <input id="phone" name="phone" placeholder="e.g. +92 3049658246" required>
+    </div>
+    <div>
+      <label for="course">Course</label>
+      <select id="course" name="course" required>
+        <option value="">Select a course</option>
+        <option>Noorani Qaida</option>
+        <option>Tajweed</option>
+        <option>Hifz</option>
+        <option>Kids Program</option>
+        <option>Arabic Basics</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <label for="message">Your Goals</label>
+    <textarea id="message" name="message" placeholder="Tell us about your goals"></textarea>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <button type="submit" class="btn">Request Trial</button>
+    <a href="https://wa.me/923049658246" target="_blank" class="btn">Chat on WhatsApp</a>
+  </div>
+</form>
+
       </div>
       <aside class="card" style="padding:18px">
         <h4>Contact</h4>
