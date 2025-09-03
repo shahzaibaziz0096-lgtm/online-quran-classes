@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online Quran Academy – Learn Quran Online</title>
+  <meta name="description" content="Learn Quran online with certified tutors. One-to-one classes, Tajweed, Noorani Qaida, Hifz, and Islamic Studies. Free trial available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="logo-Picsart-BackgroundRemover.png" type="image/x-icon">
+  <style>
+    :root{
+      --bg:#0b1220;          /* page background */
+      --card:#0f172a;        /* cards/nav */
+      --muted:#94a3b8;       /* muted text */
+      --text:#e5e7eb;        /* main text */
+      --brand:#22c55e;       /* primary color */
+      --brand-2:#16a34a;     /* darker primary */
+      --accent:#38bdf8;      /* accent color */
+      --danger:#ef4444;
+      --ring: 0 0 0 3px rgba(34,197,94,.25);
+      --radius:16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+   body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif;
+  background:
+    radial-gradient(1200px 600px at 70% -20%, rgba(56, 189, 248, 0.15), transparent),
+    radial-gradient(900px 500px at 10% 10%, rgba(139, 92, 246, 0.12), transparent),
+  linear-gradient(135deg, #4b6cb7, #182848);
+  color:var(--text);
+}
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Container */
+    .container{width:min(1200px, 92%);margin-inline:auto}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);border-bottom:1px solid rgba(148,163,184,.15)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;gap:30px;align-items:center;}
+.logo{width:80px;height:80px;border-radius:10px;display:grid;place-items:center;box-shadow:var(--shadow);background:white;}
+.logo img{width:100%;height:100%;object-fit:contain;border-radius:10px}
+.logo svg{width:22px;height:22px;fill:#0b1220}
+.brand h1{font-size:25px;margin:0;font-weight:800;letter-spacing:.3px,;color:rgb(255, 255, 255); cursor: pointer;}
+.nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+.nav a{color:rgb(255, 255, 255);opacity:.9}
+.nav a:hover{opacity:1}
+.btn{display:inline-grid;place-items:center;padding:.8rem 1.1rem;border-radius:999px;background:var(--brand);color:#06120b;font-weight:700;border:1px solid rgba(255,255,255,.05);box-shadow: 0 8px 20px rgba(34,197,94,.25)}
+.btn:hover{background:var(--brand-2)}
+.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.12);box-shadow:none}
+
+
+    /* Mobile menu */
+    .menu-toggle{display:none;background:transparent;border:none;color:var(--text)}
+    .menu-toggle svg{width:26px;height:26px}
+    #mobileMenu{display:none;}
+    #mobileMenu.open{display:block}
+    #mobileMenu ul{list-style:none;padding:8px 0;margin:8px 0 0 0;display:grid;gap:6px}
+    #mobileMenu a{display:block;padding:10px 12px;border-radius:10px}
+    #mobileMenu a:hover{background:rgba(148,163,184,.12)}
+
+    /* Hero */
+    .hero{padding:64px 0 32px}
+    .hero-grid{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;padding:6px 10px;border:1px solid rgba(148,163,184,.3);border-radius:999px;color:var(--muted)}
+    .hero h2{font-size: clamp(28px, 4vw, 48px);line-height:1.1;margin:14px 0;font-weight:800}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .card{background:var(--card);border:1px solid rgba(148,163,184,.18);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card{padding:18px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+    .stat{padding:14px;border-radius:14px;background:rgba(148,163,184,.08);text-align:center}
+    .stat h4{margin:0;font-size:18px}
+    .stat p{margin:6px 0 0 0;color:var(--muted);font-size:12px}
+
+    /* Sections */
+    section{padding:56px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}
+    .section-head h3{margin:0;font-size:28px}
+    .section-head p{margin:0;color:var(--muted)}
+
+    /* Courses grid */
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+    .course{padding:16px;display:flex;flex-direction:column;gap:10px}
+    .chip{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(34,197,94,.15);color:#b9fbc0;font-size:12px}
+    .course h4{margin:6px 0 0 0}
+    .course p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Features */
+    .feature{padding:16px}
+    .feature h5{margin:8px 0 6px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Tutors */
+    .tutor{padding:16px;display:flex;gap:12px;align-items:center}
+    .avatar{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#60a5fa,#34d399);display:grid;place-items:center;font-weight:800;color:#0b1220}
+
+    /* Pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .plan{padding:20px;position:relative;overflow:hidden}
+    .plan h4{margin:6px 0}
+    .price{font-size:32px;font-weight:800}
+    .plan ul{margin:12px 0 0 0;padding:0 0 0 18px;color:var(--muted)}
+
+    /* Testimonials */
+    .testimonial{padding:18px;font-size:14px}
+    .quote{font-style:italic;color:#d1fae5}
+
+    /* FAQ */
+    .faq{padding:14px}
+    .faq summary{cursor:pointer;list-style:none;padding:12px 14px;border-radius:12px;background:rgba(148,163,184,.08);border:1px solid rgba(148,163,184,.18)}
+    .faq summary::marker{display:none}
+    .faq p{margin:10px 0 0 0;color:var(--muted)}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input, select, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.25);background:rgba(148,163,184,.06);color:var(--text)}
+    input:focus, select:focus, textarea:focus{outline:none;box-shadow:var(--ring);border-color:var(--brand)}
+    textarea{min-height:120px}
+
+    /* Footer */
+    footer{padding:28px 0;border-top:1px solid rgba(148,163,184,.15);color:white}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+      .grid.cols-4{grid-template-columns:repeat(2,1fr)}
+      .pricing{grid-template-columns:1fr}
+      .menu-toggle{display:block}
+      .nav ul{display:none}
+    }
+    @media (max-width: 560px){
+      .grid.cols-3,.grid.cols-4{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(3,1fr)}
+      .section-head{display:block}
+      .badge{font-size:11px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+  <div class="container nav">
+    <div class="brand">
+      <!-- Yahan apna logo image add kiya -->
+      <img src="logo-Picsart-BackgroundRemover.png" alt="Hanif Iqbal Online Teacher" class="logo">
+      <h1>Online Quran Academy</h1>
+    </div>
+    <nav>
+      <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#tutors">Tutors</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div id="mobileMenu" class="container">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#tutors">Tutors</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+
+  <!-- Hero -->
+  <section id="home" class="hero container">
+    <div class="hero-grid">
+      <div>
+        <span class="badge">One-to-One Classes · Free Trial · 24/7</span>
+        <h2>Learn Quran online with <span style="color:var(--accent)">certified Arab & non‑Arab tutors</span></h2>
+        <p>Start from Noorani Qaida, improve Tajweed, or memorize (Hifz) with flexible schedules for kids & adults. First class is free.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn">Book Free Trial</a>
+          <a href="#courses" class="btn ghost">Browse Courses</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><h4>5k+</h4><p>Students</p></div>
+          <div class="stat"><h4>50+</h4><p>Certified Tutors</p></div>
+          <div class="stat"><h4>30+</h4><p>Countries</p></div>
+        </div>
+      </div>
+      <div class="card hero-card">
+        <img src="kid quran.webp" alt="Quran learning" style="border-radius:12px;aspect-ratio:16/10;object-fit:cover">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+          <div class="chip">Tajweed Focus</div>
+          <div class="chip" style="background:rgba(56,189,248,.18);color:#cffafe">Flexible Timing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section id="courses" class="container">
+    <div class="section-head">
+      <h3>Popular Courses</h3>
+      <p>Structured paths for every level</p>
+    </div>
+    <div class="grid cols-3">
+      <article class="card course">
+        <span class="chip">Beginner</span>
+        <h4>Noorani/Basic Qaida</h4>
+        <p>Learn Arabic letters, pronunciation (Makharij) and reading rules step by step.</p>
+        <a class="btn ghost" href="#contact">Enroll</a>
+      </article>
+      <article class="card course">
+        <span class="chip">Intermediate</span>
+        <h4>Tajweed & Fluency</h4>
+        <p>Master rules of Tajweed with daily recitation practice and corrections.</p>
+        <a class="btn ghost" href="#contact">Enroll</a>
+      </article>
+      <article class="card course">
+        <span class="chip">Advanced</span>
+        <h4>Hifz (Memorization)</h4>
+        <p>Personalized Hifz plan with revision cycles (Muraja'ah) and weekly tests.</p>
+        <a class="btn ghost" href="#contact">Enroll</a>
+      </article>
+      <article class="card course">
+        <span class="chip">Kids</span>
+        <h4>Kids Quran Program</h4>
+        <p>Fun, interactive lessons for children with progress reports.</p>
+        <a class="btn ghost" href="#contact">Enroll</a>
+      </article>
+      <article class="card course">
+        <span class="chip">Arabic</span>
+        <h4>Arabic Basics</h4>
+        <p>Foundational Arabic language skills for reading Qur'an with understanding.</p>
+        <a class="btn ghost" href="#contact">Enroll</a>
+      </article>
+      <article class="card course">
+        <span class="chip">Islamic Studies</span>
+        <h4>Du'as & Manners</h4>
+        <p>Learn daily supplications, Seerah, and Islamic etiquette.</p>
+        <a class="btn ghost" href="#contact">Enroll</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="container">
+    <div class="section-head">
+      <h3>Why Choose Us</h3>
+      <p>Everything you need to learn with confidence</p>
+    </div>
+    <div class="grid cols-4">
+      <div class="card feature">
+        <h5>1-to-1 Live Classes</h5>
+        <p>Private Zoom/Meet lessons tailored to your pace and goals.</p>
+      </div>
+      <div class="card feature">
+        <h5>Certified Tutors</h5>
+        <p>Male & female teachers with Ijazah/Tajweed certifications.</p>
+      </div>
+      <div class="card feature">
+        <h5>Flexible Schedules</h5>
+        <p>24/7 availability to suit any timezone and routine.</p>
+      </div>
+      <div class="card feature">
+        <h5>Progress Reports</h5>
+        <p>Monthly evaluation with feedback and milestones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tutors -->
+  <section id="tutors" class="container">
+    <div class="section-head">
+      <h3>Meet Our Tutors</h3>
+      <p>Experienced, caring, and qualified</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="card tutor">
+        <div class="avatar">AM</div>
+        <div>
+          <strong>Ahmed Malik</strong>
+          <p>Hafiz · 8+ yrs · Tajweed Expert</p>
+        </div>
+      </div>
+      <div class="card tutor">
+        <div class="avatar">FS</div>
+        <div>
+          <strong>Fatima Saeed</strong>
+          <p>Ijazah Holder · Hifz & Qaida</p>
+        </div>
+      </div>
+      <div class="card tutor">
+        <div class="avatar">RH</div>
+        <div>
+          <strong>Rashid Hussain</strong>
+          <p>Arabic Language · 6+ yrs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Testimonials -->
+  <section class="container">
+    <div class="section-head">
+      <h3>What Students Say</h3>
+      <p>Real feedback from our learners</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="card testimonial"><p class="quote">“My son improved his Tajweed within 2 months. Teachers are very patient!”</p><p>— Ayesha (PK)</p></div>
+      <div class="card testimonial"><p class="quote">“Flexible timings helped me continue Hifz along with school.”</p><p>— Hamza (PK)</p></div>
+      <div class="card testimonial"><p class="quote">“Professional academy with proper reports and guidance.”</p><p>— Maryam (PK)</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container">
+    <div class="section-head">
+      <h3>FAQs</h3>
+      <p>Answers to common questions</p>
+    </div>
+    <div class="grid cols-3">
+      <details class="card faq">
+        <summary>How do the online classes work?</summary>
+        <p>Classes are 1‑to‑1 on Zoom/Google Meet. After signup, we match you with a tutor and schedule your trial.</p>
+      </details>
+      <details class="card faq">
+        <summary>Is there a free trial?</summary>
+        <p>Yes, you get a free 30‑minute trial to experience our teaching style and discuss your goals.</p>
+      </details>
+      <details class="card faq">
+        <summary>Do you have female tutors for sisters/kids?</summary>
+        <p>Yes, we have qualified female tutors available across different time zones.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact / Lead Form -->
+  <section id="contact" class="container">
+    <div class="section-head">
+      <h3>Book Your Free Trial</h3>
+      <p>Fill the form and our team will contact you shortly</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="card" style="padding:18px;grid-column:span 2">
+        <form id="leadForm" novalidate>
+          <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:12px">
+            <div>
+              <label for="name">Full Name</label>
+              <input id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="name@email.com" required>
+            </div>
+          </div>
+          <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:12px">
+            <div>
+              <label for="phone">WhatsApp / Phone</label>
+              <input id="phone" name="phone" placeholder="e.g. +92 3049658246" required>
+            </div>
+            <div>
+              <label for="course">Course</label>
+              <select id="course" name="course" required>
+                <option value="">Select a course</option>
+                <option>Noorani Qaida</option>
+                <option>Tajweed</option>
+                <option>Hifz</option>
+                <option>Kids Program</option>
+                <option>Arabic Basics</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message">Your Goals</label>
+            <textarea id="message" name="message" placeholder="Tell us about your goals"></textarea>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <button type="submit" class="btn">Request Trial</button>
+            <a href="https://wa.me/923049658246" target="_blank" class="btn">Chat on WhatsApp</a>
+            <small id="formMsg" style="color:var(--muted)"></small>
+          </div>
+        </form>
+      </div>
+      <aside class="card" style="padding:18px">
+        <h4>Contact</h4>
+        <p style="color:var(--muted)">Email: support@quranacademy.example<br>Phone/WhatsApp: +92 300 0000000</p>
+        <h4>Timings</h4>
+        <p style="color:var(--muted)">24/7 · Flexible per your timezone</p>
+        <h4>Address</h4>
+        <p style="color:var(--muted)">Remote academy · Global</p>
+      </aside>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <p>© <span id="year"></span> Online Quran Academy. All rights reserved.</p>
+      <p><a href="#home">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', ()=>{
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Active year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple form validation + demo submit (no backend needed)
+    const leadForm = document.getElementById('leadForm');
+    const formMsg = document.getElementById('formMsg');
+    leadForm?.addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = new FormData(leadForm);
+      const name = data.get('name').trim();
+      const email = data.get('email').trim();
+      const phone = data.get('phone').trim();
+      const course = data.get('course');
+
+      if(!name || !email || !phone || !course){
+        formMsg.textContent = 'Please fill all required fields.';
+        formMsg.style.color = 'var(--danger)';
+        return;
+      }
+      // Demo: show success state. Replace with real submit (fetch) as needed.
+      formMsg.textContent = 'Thanks! We\'ll contact you within 24 hours.';
+      formMsg.style.color = 'var(--brand)';
+      leadForm.reset();
+    });
+
+    // Smooth close of mobile menu on link click
+    mobileMenu?.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', ()=> mobileMenu.classList.remove('open'))
+    })
+  </script>
+</body>
+</html>
