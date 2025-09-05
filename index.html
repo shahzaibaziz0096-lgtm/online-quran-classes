@@ -442,42 +442,51 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', ()=>{
-      mobileMenu.classList.toggle('open');
-    });
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', ()=>{
+    mobileMenu.classList.toggle('open');
+  });
 
-    // Active year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  // Active year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Simple form validation + demo submit (no backend needed)
-    const leadForm = document.getElementById('leadForm');
-    const formMsg = document.getElementById('formMsg');
-    leadForm?.addEventListener('submit', function(e){
-      e.preventDefault();
-      const data = new FormData(leadForm);
-      const name = data.get('name').trim();
-      const email = data.get('email').trim();
-      const phone = data.get('phone').trim();
-      const course = data.get('course');
+  // Form submit with Web3Forms
+  const leadForm = document.getElementById('leadForm');
+  const formMsg = document.getElementById('formMsg');
 
-      if(!name || !email || !phone || !course){
-        formMsg.textContent = 'Please fill all required fields.';
+  leadForm?.addEventListener('submit', async function(e){
+    e.preventDefault();
+    formMsg.textContent = 'Submitting...';
+    formMsg.style.color = 'var(--accent)';
+
+    try {
+      const response = await fetch(leadForm.action, {
+        method: 'POST',
+        body: new FormData(leadForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        formMsg.textContent = '✅ Thanks! We\'ll contact you within 24 hours.';
+        formMsg.style.color = 'var(--brand)';
+        leadForm.reset();
+      } else {
+        formMsg.textContent = '❌ Something went wrong. Please try again.';
         formMsg.style.color = 'var(--danger)';
-        return;
       }
-      // Demo: show success state. Replace with real submit (fetch) as needed.
-      formMsg.textContent = 'Thanks! We\'ll contact you within 24 hours.';
-      formMsg.style.color = 'var(--brand)';
-      leadForm.reset();
-    });
+    } catch (error) {
+      formMsg.textContent = '⚠️ Network error. Please try later.';
+      formMsg.style.color = 'var(--danger)';
+    }
+  });
 
-    // Smooth close of mobile menu on link click
-    mobileMenu?.querySelectorAll('a').forEach(a=>{
-      a.addEventListener('click', ()=> mobileMenu.classList.remove('open'))
-    })
-  </script>
+  // Smooth close of mobile menu on link click
+  mobileMenu?.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=> mobileMenu.classList.remove('open'))
+  });
+</script>
+
 </body>
 </html>
